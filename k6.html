@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>K6: Xử Lý Sự Kiện Bàn Phím</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; height: 100vh; overflow: hidden; }
+        .arena { position: relative; width: 100%; height: 350px; border: 2px dashed #ccc; background: #f9f9f9; }
+        #box {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background-color: #2b50ed;
+            top: 20px;
+            left: 20px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        p { color: #555; }
+    </style>
+</head>
+<body>
+    <h2>Bài tập K6: Xử Lý Sự Kiện Bàn Phím</h2>
+    <p>Dùng phím mũi tên <strong>LÊN</strong> và <strong>XUỐNG</strong> trên bàn phím để di chuyển khối màu.</p>
+    
+    <div class="arena" id="arena">
+        <div id="box">Box</div>
+    </div>
+
+    <script>
+        const box = document.getElementById('box');
+        const arena = document.getElementById('arena');
+        let currentTop = 20; // Vị trí top ban đầu
+
+        document.addEventListener('keydown', function(event) {
+            const step = 15; // Khoảng cách dịch chuyển mỗi lần bấm
+            const maxTop = arena.clientHeight - box.clientHeight;
+
+            if (event.key === 'ArrowUp') {
+                currentTop = Math.max(0, currentTop - step);
+                box.style.top = currentTop + 'px';
+                event.preventDefault(); // Ngăn cuộn trang mặc định của trình duyệt
+            } else if (event.key === 'ArrowDown') {
+                currentTop = Math.min(maxTop, currentTop + step);
+                box.style.top = currentTop + 'px';
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

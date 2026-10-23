@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>TK8: Chuyển đổi màu Hex sang RGB</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .container { max-width: 400px; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+        input, button { padding: 8px; margin: 5px 0; width: 100%; box-sizing: border-box; }
+        .color-box { width: 100%; height: 50px; margin-top: 10px; border: 1px solid #000; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Bài tập TK8: Hex sang RGB</h2>
+        <label>Nhập mã Hex (VD: #4A90E2):</label>
+        <input type="text" id="hexInput" value="#4A90E2">
+        <button onclick="convertHexToRgb()">Chuyển đổi</button>
+        <p id="rgbResult">Giá trị RGB: </p>
+        <div id="colorPreview" class="color-box"></div>
+    </div>
+
+    <script>
+        function convertHexToRgb() {
+            let hex = document.getElementById('hexInput').value.trim();
+            if (hex.startsWith('#')) hex = hex.slice(1);
+            if (hex.length === 3) {
+                hex = hex.split('').map(x => x + x).join('');
+            }
+            if (hex.length !== 6 || !/^[0-9A-Fa-f]{6}$/.test(hex)) {
+                document.getElementById('rgbResult').innerText = "Mã Hex không hợp lệ!";
+                return;
+            }
+            const r = parseInt(hex.substring(0, 2), 16);
+            const g = parseInt(hex.substring(2, 4), 16);
+            const b = parseInt(hex.substring(4, 6), 16);
+            
+            const rgbStr = `rgb(${r}, ${g}, ${b})`;
+            document.getElementById('rgbResult').innerText = "Giá trị RGB: " + rgbStr;
+            document.getElementById('colorPreview').style.backgroundColor = rgbStr;
+        }
+        convertHexToRgb();
+    </script>
+</body>
+</html>

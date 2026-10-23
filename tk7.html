@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>TK7: Tạo chuỗi ngẫu nhiên</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .container { max-width: 400px; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+        input, button { padding: 8px; margin: 5px 0; width: 100%; box-sizing: border-box; }
+        .result { margin-top: 15px; font-weight: bold; word-break: break-all; color: #2b50ed; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Bài tập TK7: Tạo chuỗi ngẫu nhiên</h2>
+        <label>Độ dài chuỗi:</label>
+        <input type="number" id="lengthInput" value="10" min="1" max="100">
+        <button onclick="generateRandomString()">Tạo chuỗi</button>
+        <div class="result" id="resultOutput"></div>
+    </div>
+
+    <script>
+        function generateRandomString() {
+            const len = parseInt(document.getElementById('lengthInput').value);
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            let result = '';
+            for (let i = 0; i < len; i++) {
+                result += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            document.getElementById('resultOutput').innerText = 'Kết quả: ' + result;
+        }
+    </script>
+</body>
+</html>

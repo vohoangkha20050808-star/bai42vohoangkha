@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ - Bài tập Lập trình Web</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f4f6f9; }
+        header { background-color: #2b50ed; color: white; padding: 25px 20px; text-align: center; }
+        header h1 { margin: 0 0 8px 0; font-size: 26px; }
+        header p { margin: 0; opacity: 0.9; font-size: 15px; }
+        .profile { max-width: 900px; margin: 20px auto; background: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .profile h2 { margin-top: 0; color: #2b50ed; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px; }
+        .info-item { background: #f8f9fa; padding: 12px 15px; border-radius: 6px; border-left: 4px solid #2b50ed; }
+        .info-item strong { display: block; color: #555; font-size: 13px; margin-bottom: 3px; text-transform: uppercase; }
+        .info-item span { font-size: 16px; font-weight: 600; color: #333; }
+        nav { max-width: 900px; margin: 25px auto; padding: 0 10px; }
+        nav h2 { margin-bottom: 15px; color: #333; }
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+        .card { background: white; padding: 18px; border-radius: 8px; text-decoration: none; color: #333; border: 1px solid #e2e8f0; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.04); display: flex; flex-direction: column; justify-content: space-between; }
+        .card:hover { transform: translateY(-4px); box-shadow: 0 6px 12px rgba(43,80,237,0.15); border-color: #2b50ed; }
+        .card h3 { margin: 0 0 8px 0; color: #2b50ed; font-size: 18px; }
+        .card p { margin: 0; color: #666; font-size: 14px; line-height: 1.4; }
+        .card .tag { display: inline-block; margin-top: 12px; font-size: 12px; font-weight: bold; padding: 3px 8px; background: #eef2ff; color: #2b50ed; border-radius: 4px; width: fit-content; }
+        footer { text-align: center; padding: 20px; margin-top: 40px; color: #777; font-size: 14px; border-top: 1px solid #e5e7eb; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>BÁO CÁO THỰC HÀNH LẬP TRÌNH WEB</h1>
+        <p>Trường Đại Học Văn Hiến (VHU)</p>
+    </header>
+
+    <div class="profile">
+        <h2>Thông tin sinh viên</h2>
+        <div class="info-grid">
+            <div class="info-item">
+                <strong>Họ và tên</strong>
+                <span>Võ Hoàng Kha</span>
+            </div>
+            <div class="info-item">
+                <strong>Mã số sinh viên</strong>
+                <span>231A010866</span>
+            </div>
+            <div class="info-item">
+                <strong>Ngày sinh</strong>
+                <span>08/08/2005</span>
+            </div>
+            <div class="info-item">
+                <strong>Môn học</strong>
+                <span>Lập trình Web</span>
+            </div>
+        </div>
+    </div>
+
+    <nav>
+        <h2>Danh mục bài tập thực hành</h2>
+        <div class="menu-grid">
+            <a href="tk5.html" class="card" target="_blank">
+                <div>
+                    <h3>Bài TK5</h3>
+                    <p>Accordion đơn giản (Ẩn/hiện nội dung trượt bằng CSS & JavaScript)</p>
+                </div>
+                <span class="tag">Trung bình khó</span>
+            </a>
+
+            <a href="tk7.html" class="card" target="_blank">
+                <div>
+                    <h3>Bài TK7</h3>
+                    <p>Tạo chuỗi ký tự ngẫu nhiên với độ dài tùy chọn</p>
+                </div>
+                <span class="tag">Trung bình khó</span>
+            </a>
+
+            <a href="tk8.html" class="card" target="_blank">
+                <div>
+                    <h3>Bài TK8</h3>
+                    <p>Chuyển đổi mã màu Hex sang dạng RGB kèm ô xem trước</p>
+                </div>
+                <span class="tag">Trung bình khó</span>
+            </a>
+
+            <a href="k4.html" class="card" target="_blank">
+                <div>
+                    <h3>Bài K4</h3>
+                    <p>Phân trang danh sách 50 mục hiển thị 10 mục mỗi trang</p>
+                </div>
+                <span class="tag">Cấp độ Khó</span>
+            </a>
+
+            <a href="k6.html" class="card" target="_blank">
+                <div>
+                    <h3>Bài K6</h3>
+                    <p>Xử lý sự kiện bàn phím di chuyển khối div lên/xuống</p>
+                </div>
+                <span class="tag">Cấp độ Khó</span>
+            </a>
+
+            <a href="k8.html" class="card" target="_blank">
+                <div>
+                    <h3>Bài K8</h3>
+                    <p>Tính chỉ số BMI và phân loại thiếu cân, bình thường, thừa cân</p>
+                </div>
+                <span class="tag">Cấp độ Khó</span>
+            </a>
+        </div>
+    </nav>
+
+    <footer>
+        <p>© 2026 Võ Hoàng Kha - MSSV: 231A010866 - VHU</p>
+    </footer>
+
+</body>
+</html>

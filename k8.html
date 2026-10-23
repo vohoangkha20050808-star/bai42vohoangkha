@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>K8: Tính Chỉ Số BMI</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .container { max-width: 350px; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+        input, button { width: 100%; padding: 8px; margin: 6px 0; box-sizing: border-box; }
+        .result { margin-top: 15px; font-weight: bold; font-size: 16px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Bài tập K8: Tính Chỉ Số BMI</h2>
+        <label>Cân nặng (kg):</label>
+        <input type="number" id="weight" step="0.1" placeholder="Ví dụ: 60">
+        
+        <label>Chiều cao (m):</label>
+        <input type="number" id="height" step="0.01" placeholder="Ví dụ: 1.70">
+        
+        <button onclick="calculateBMI()">Tính BMI</button>
+        
+        <div class="result" id="bmiResult"></div>
+    </div>
+
+    <script>
+        function calculateBMI() {
+            const weight = parseFloat(document.getElementById('weight').value);
+            const height = parseFloat(document.getElementById('height').value);
+            const resultEl = document.getElementById('bmiResult');
+
+            if (!weight || !height || weight <= 0 || height <= 0) {
+                resultEl.style.color = 'red';
+                resultEl.innerText = "Vui lòng nhập cân nặng và chiều cao hợp lệ!";
+                return;
+            }
+
+            const bmi = weight / (height * height);
+            let classification = "";
+            let color = "#333";
+
+            if (bmi < 18.5) {
+                classification = "Thiếu cân";
+                color = "#d9534f";
+            } else if (bmi >= 18.5 && bmi < 25) {
+                classification = "Bình thường";
+                color = "#5cb85c";
+            } else {
+                classification = "Thừa cân";
+                color = "#f0ad4e";
+            }
+
+            resultEl.style.color = color;
+            resultEl.innerHTML = `Chỉ số BMI: ${bmi.toFixed(2)}<br>Phân loại: ${classification}`;
+        }
+    </script>
+</body>
+</html>
